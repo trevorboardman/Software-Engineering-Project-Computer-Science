@@ -8,8 +8,7 @@ $result = mysqli_query($link, "SELECT StudentEmail FROM StudentInfo WHERE Studen
 $row = mysqli_fetch_row($result);
 $Email = $row[0];
 $Username = substr($Email, 0, strpos($Email, '@'));
-$String = "MVNU#";
-$Password = $String . $StudentID;
+$Password = $StudentID;
 
 // attempt insert query execution
 $sql = "INSERT INTO users  (username, password) VALUES ('$Username', '$Password')";
